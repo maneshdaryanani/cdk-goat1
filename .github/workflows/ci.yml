@@ -4,11 +4,14 @@ on:
   push:
     branches: [main]
 
-permissions: write-all
+permissions: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
     steps:
         - name: Checkout Repository
           uses: actions/checkout@v3
